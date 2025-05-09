@@ -20,8 +20,8 @@ initial_lr = 0.1
 model, losses, accs, alpha_module = train_binary_nn(vgg, loss_fn, train_dataloader, val_dataloader, num_epochs, initial_lr, lambda_schedule_soft, tau = 5, eps = 0.1)
 
 data = [(model, "model.pkl"), (losses, "losses.pkl"), (accs, "accs.pkl"), (alpha_module, "alpha_module.pkl")]
-save_path = '/cifar/cifar_vgg'
-os.makedirs(os.path.dirname(save_path), exist_ok=True)
+save_path = './cifar_vgg'
+os.makedirs(save_path, exist_ok=True)
 
 for elem, filename in data:
     full_path = os.path.join(save_path, filename)
